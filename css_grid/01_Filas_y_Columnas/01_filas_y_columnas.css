@@ -1,0 +1,48 @@
+/* FILAS Y COLUMNAS
+
+    TEMAS:
+        - grid-template-columns >>> establece columnas de la grid, sus valores son la cantidad y el tamaño de las rejillas.
+        - grid-template-rows >>> establece filas de la grid, sus valores son la cantidad y el tamaño de las rejillas.
+        - gap >>> establece separaciones para la filas y columnas de una grid.
+
+    SINTAXIS:
+        - grid-template-columns: none|auto|value|max-content|min-content|function|initial|inherit >>> Especifica la longitud (y los anchos) de las columnas en un diseño de cuadrícula. Los valores son una lista separada por espacios, donde cada valor especifica el tamaño de la columna respectiva
+            - none >>> Es el valor por defecto. Cualquier columna será generada implicitamente (por si misma) y su tamaño sera determinado por la propiedad grid-auto-columns.
+            - auto >>> El tamaño de las columnas los establece de forma automatica considerando: tamaño del contenedor y el tamaño del contenido de los elementos en la columna.
+                - Nota: Los tamaños de vía auto  (y sólo los tamaños de vía auto ) pueden ser estirados por las propiedades justify-content.  
+            -value >>> Establece la grid apartir de un valor numerico que puede ser de longitud, porcentaje etc.
+                - length >>> Es una longitud no negativa como 2px 100px etc.
+                - percentage >>> Es un valor no negativo <percentage>, relativo al tamaño del bloque del contenedor. Por ejemplo si es 50% sera la mitad del tamaño del padre.
+                - flex >>> Es una dimensión no negativa con la unidad fr especificando el factor de flexibilidad de la vía. Cada vía de tamaño- <flex> toma un trozo del espacio restante en proporción a su factor de flexibilidad. Cuando aparece en una notación minmax(), implica un mínimo automático (es decir, minmax(auto, <flex>)).
+            - max-content >>> Es una palabra clave representando la mayor contribución máxima de contenido de los elementos de la cuadrícula ocupando las vías de ésta.
+            - min-content >>> Es una palabra clave representando la mayor contribución mínima de contenido de los elementos de la cuadrícula ocupando las vías de ésta.
+            - function >>> Establece la grid apartir de funciones como minmax(), fit-content(),repeat().
+                - minmax(min, max) >>> Es una notación funcional que define un rango de tamaño, mayor o igual que min, y menor o igual que max. Si max es menor a min, entonces max es ignorado y la función es tratada como min. Como un máximo, un valor <flex> ajusta el factor de flexibilad de la vía. Es inválido utilizarlo como un mínimo.
+                - fit-content( [ <length> | <percentage> ] ) >>> Representa la fórmula min(max-content, max(auto, argument)), que se calcula de forma similar a auto (es decir, minmax(auto, max-content)), excepto que el tamaño de la vía se fija a argument si es mayor que el mínimo.
+                - repeat( [ <positive-integer> | auto-fill | auto-fit ] , <track-list> ) >>> Representa un fragmento repetido de la lista de vías, permitiendo que un gran número de columnas que muestran un patrón recurrente se escriban de una manera más compacta.
+            - initial >>> 
+            - inherit >>> establece su valor apartir de su elemento padre
+        - grid-template-rows: int valor 
+        - gap: row-gap column-gap >>> Establece los huecos o separaciones entre filas y columnas
+            - row-gap >>> establece el tamaño de separacion entre filas, su valor es una longitud
+            - column-gap >>> establece el tamaño de separacion entre filas, su valor es una longitud
+        - gap: gap_value
+            - gap_value >>> establece el tamaño de separacion para filas y columnas, su valor es una longitud
+*/
+
+#contenedor1 {
+    display: grid;
+    grid-template-columns: 100px 100px 100px; /*en este caso crea 3 columnas con un ancho de 100px cada una*/
+    grid-template-rows:  50px 80px; /*en este caso crea 2 filas con un ancho de 50px y 80px, y ademas se crea 2 filas mas por el exceso de elementos su tamaño se crea de forma implicita*/
+    gap: 5px; /*Crea una separacion entre elementos de 5px*/
+}
+#contenedor2 {
+    display: grid;
+    grid-template-columns: auto auto auto; /*en este caso crea tres columas con un ancho automatico entre todas*/
+    grid-template-rows:  auto auto auto; /*en este caso crea tres filas con un ancho automatico entre todas*/
+    gap: 5px; /*Crea una separacion entre elementos de 5px*/
+}
+#contenedor3 {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /*en este caso la segunda columa sera 3 veces mas ancho que las otras dos*/
+}

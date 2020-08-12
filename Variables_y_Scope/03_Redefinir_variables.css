@@ -1,0 +1,14 @@
+/*REDEFINIR EL VALOR DE UNA VARIABLE
+
+*/
+
+:root {
+    --size_titulo: 8em;
+}
+h1 {
+    --size_titulo:4em;
+    font-size: var(--size_titulo);
+}
+
+
+

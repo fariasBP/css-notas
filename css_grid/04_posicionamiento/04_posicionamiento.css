@@ -1,0 +1,93 @@
+/* POSICIONAMIENTO
+Esta función puede ser usada en las propiedades CSS Grid:
+        grid-template-columns
+        grid-template-rows
+
+    TEMAS:
+        - grid-column-start: value >>> establece la columna de inicio que ocupara el elemento.
+        - grid-row-start: value >>> establece la columna final que ocupara el elemento.
+        - grid-column: start / end >>> establece las columnas que ocupara el elemento.
+        - grid-row: start / end >>> establece las filas que ocupara el elemento.
+        - grid-area: start_row / start_column / end_row / end_column >>> estalbelce las columnas y filas que ocupara el elemento.
+*/
+.contenedor {
+    display: grid;
+    gap: 5px;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+.A, .B, .C, .D, .E, .F, .G, .H {
+    background-color: darkslateblue;
+    color: white;
+}
+        - grid-column: start / end >>> establece las columnas que ocupara el elemento.
+        - grid-row: start / end >>> establece las filas que ocupara
+        - grid-area: start_row / start_column / end_row / end_column >>> estalbelce las columnas y filas que ocupara el elemento.
+    SYNTAXIS:    
+        - repeat( [<length>|<percentage>|min-content|max-content|auto] , [ <length>|<percentage>|<flex>|min-content|max-content|auto] )
+*/
+.contenedor {
+    display: grid;
+    gap: 5px;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+.A, .B, .C, .D, .E, .F, .G, .H {
+    background-color: darkslateblue;
+    color: white;
+}
+
+/* Ejemplo 1 - Usando Posicionamiento por primera vez */
+.A {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+/* Ejemplo 2 - Posicionando en una columna especifica */
+.B {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+/* Ejemplo 3 - Posicionando y Ocupando una cantidad de columnas */
+.C {
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+/* Ejemplo 4 - Ocupando todas las columnas usando valores Negativos*/
+.D {
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+/* Ejemplo 5 - Posicionando en columnas y reglones */
+.E {
+    grid-column-start: 2;
+    grid-column-end: 6;
+
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+/* Ejemplo 6 - Ocupando todas los reglones y dos columnas*/
+.F {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    grid-row-start: 1;
+    grid-row-end: -1;
+}
+/* Ejemplo 7 - Usando la segunda forma para Posicionamiento */
+.G {
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    grid-column: 1 / 3;
+
+    /* grid-row-start: 1;
+    grid-row-end: -1; */
+    grid-row: 1/-1;
+}
+/* Ejemplo 8 - Usando la tercera forma para Posicionamiento */
+.H {
+    /* grid-column: 1 / 3;
+    grid-row: 1/-1; */
+    grid-area: 1 / 1 / -1 / 3;
+}

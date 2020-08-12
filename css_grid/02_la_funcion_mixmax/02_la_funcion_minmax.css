@@ -1,0 +1,22 @@
+/* MINMAX()
+    Es una notación funcional que define un rango de tamaño, mayor o igual que min, y menor o igual que max. Si max es menor a min, entonces max es ignorado y la función es tratada como min. Como un máximo, un valor <flex> ajusta el factor de flexibilad de la vía. Es inválido utilizarlo como un mínimo.
+    La función minmax() puede ser usada dentro de: 
+        grid-template-columns
+        grid-template-rows
+        grid-auto-columns
+        grid-auto-rows
+    TEMAS:
+        - minmax(tamaño_minimo, tamaño_maximo) >>> Define un rango de tamaño, en el caso de que puede ocupar el tamaño maximo lo hacer, pero si no puede usa el tamaño minimo.
+    SYNTAXIS:
+        - minmax( [<length>|<percentage>|min-content|max-content|auto] , [ <length>|<percentage>|<flex>|min-content|max-content|auto] )
+*/
+
+.contenedor {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 1fr; /*en este caso crea 3 columnas con un ancho de 100px cada una*/
+    /* grid-template-rows:  50px 80px; en este caso crea 2 filas con un ancho de 50px y 80px, y ademas se crea 2 filas mas por el exceso de elementos su tamaño se crea de forma implicita */
+    gap: 5px; /*Crea una separacion entre elementos de 5px*/
+}
+img {
+    width: 80%;
+}

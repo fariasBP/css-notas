@@ -1,0 +1,56 @@
+/* Areas
+
+Esta función puede ser usada en las propiedades CSS Grid:
+        grid-template-columns
+        grid-template-rows
+    TEMAS:
+        - grid-column-start: value >>> establece la columna de inicio que ocupara el elemento.
+        - grid-row-start: value >>> establece la columna final que ocupara el elemento.
+        - grid-column: start / end >>> establece las columnas que ocupara el elemento.
+        - grid-row: start / end >>> establece las filas que ocupara el elemento.
+        - grid-area: start_row / start_column / end_row / end_column >>> estalbelce las columnas y filas que ocupara el elemento.
+*/
+.contenedor {
+    color: white;
+    display: grid;
+    gap: 5px;
+
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 50px 300px auto;
+    
+    grid-template-areas:"header header header"
+                        "sidebar nav widget"
+                        "sidebar contenido widget"
+                        "footer footer footer";
+}
+
+.header {
+    background-color: tomato;
+    /* grid-column-start: header; primera forma
+    grid-column-end: header; */
+
+    /* grid-column: header / header;    segunda forma
+     grid-column: header;             segunda forma simplificada */
+
+    grid-area: header;
+}
+.sidebar {
+    background-color: slateblue;
+    grid-area: sidebar;
+}
+.contenido {
+    background-color: royalblue;
+    grid-area: contenido;
+}
+.widget {
+    background-color: plum;
+    grid-area: widget;
+}
+.footer {
+    background-color: lightseagreen;
+    grid-area: footer;
+}
+.nav {
+    background-color: turquoise;
+    grid-area: nav;
+}

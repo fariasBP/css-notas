@@ -1,0 +1,33 @@
+/* MINMAX()
+    Es una funcion que nos permite establecer un gran numero de columnas o reglones en una grid.
+    Esta función puede ser usada en las propiedades CSS Grid:
+        grid-template-columns
+        grid-template-rows
+    TEMAS:
+        - repeat(numero_de_repeticion, tamaño_de_la_repeticion) >>>
+    SYNTAXIS:    
+        - repeat( [<length>|<percentage>|min-content|max-content|auto] , [ <length>|<percentage>|<flex>|min-content|max-content|auto] )
+*/
+.contenedor {
+    display: grid;
+    gap: 5px;
+}
+
+#contenedor1 {
+
+    grid-template-columns: repeat(6, 1fr);
+
+}
+
+#contenedor2 {
+
+    grid-template-columns: 50px repeat(3, 1fr) 2fr;
+    
+}
+
+#contenedor3 {
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px repeat(2, 150px) 1fr;
+    
+}

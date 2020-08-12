@@ -1,0 +1,40 @@
+/* USANDO POR PRIMERA VEZ VARIABLES EN CSS
+    Usaremos por primera vez las variables en css y veremos lo potente que
+    es esta herramienta de css. Aprenderemos a declarar (crear) y a utilizarlas
+
+    TEMAS:
+        -  --varname:valor >>> para declarar variables
+        -  var(--varname, <backupvalue>) >>> para usar variables
+            -  --varname >>> nombre de la variable
+            -  --backupvalue >>> valor de repaldo, para cuando el varname
+                                no exista.
+    SINTAXIS:
+        -  --<var_name>: <value>
+        -  var(<var_name>)
+*/
+
+/* Ejemplos de uso de variables */
+body {
+    /*--color_titulo: #3E50B4;*/
+    --color_titulo2: #9B27AF;
+    --color_subtitulo: #2195F2;
+    --color_fondo: #F3F5F9;
+    --width_contenedor: 80%;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+    background-color: var(--color_fondo);
+    font-family: var(--font);
+}
+.contenedor{
+    background-color: white;
+    margin: 0 auto;
+    width: var(--width_contenedor);
+    padding: 15px;
+}
+h1 {
+    color: var(--color_titulo, var(--color_titulo2)); /* en este caso no encuntra el primer valor asi que opta por el segundo*/
+}
+h2 {
+    color: var(--color_subtitulo);
+}

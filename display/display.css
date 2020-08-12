@@ -1,0 +1,26 @@
+/* 
+        none >>> el elemento desaparece y no tiene ningun efecto de diseño (como si no existiera). (si se quiere que solo no se vea usar "visibility").
+        block >>> el elemento se convierte o genera un cuadro de bloque lo que causa que ocupe todo el ancho de su elemento padre.
+        inline >>> el elemento se convierte en linea, lo que causa que se posicione a lado de su elemnto hermano (si lo tiene) y las propiedades de altura y anchura no tendran efecto.
+        inline-bloque >>>
+
+*/
+div.caja1 div.uno {
+    display: none; 
+}
+
+div.caja2 div{
+    display: inline; /*como el div ya tiene un display: block por defecto lo convertimos a inline*/
+}
+/* hay distintos elementos que se ya tienen un display en linea (inline) por defecto
+como los siguientes:  b, big, small, tt, abbr, acronym, cite, code, dfn, em, kbd, strong,
+samp, var, a, bdo, br, img, map, object, q, script, span, sub, sup, button, input, label,
+select, textarea*/
+
+div.caja3 a {
+    display: block; /* como el a ya tiene un diplay:inline por defecto lo convertimos en block*/
+}
+/* hay distintos elementos que se ya tienen un display en bloque (block) por defecto
+como los siguientes: address, article, aside, audio, blockquote, canvas, dd, div, dl, fieldset,
+figcaption, figure, footer, form, h1-h2-etc, header, hgroup, hr, ol, output, p, pre,
+section, table, tfoot, ul, video*/

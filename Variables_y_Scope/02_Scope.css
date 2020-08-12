@@ -1,0 +1,31 @@
+/* USANDO POR PRIMERA VEZ VARIABLES EN CSS
+    El scope en css es de DOM, es decir que decir que una etiqueta hijo
+    heredara las propiedades de la etiqueta padre. Esto mismo acurre con
+    las variables 
+
+    TEMAS:
+        - :root >>> se usa para crear variables universales
+    SINTAXIS:
+        - :root{[variables]}
+
+*/
+
+/*EJEMPLO 2 - uso de :root*/
+:root {
+    --color_general:  gray;
+}
+
+body {
+    color: var(--color_general);
+}
+
+/*EJEMPLO 1 - obsevando el scope de css y de las variables*/
+ul {
+    --color_lista: #FE9700;
+    color: var(--color_lista2); /*en este caso no se cambiara el color por
+                                que la variable no esta en una etiqueta padre sino en un hijo*/
+}
+ul li:nth-child(2) {
+    --color_lista2: #785447;
+    color: var(--color_lista);
+}
